@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="cryptman-1.17-SNAPSHOT"  basedir="." default="test">
+
+    <property name="classes.dir" value="../../target/"/>
+    <property name="prompt" value="Bitte Passwort eingeben für"/>
+    <property name="hostname" value="ftp.thomas-michel.info"/>
+    <property name="username" value="${user.name}"/>
+    <property name="passwordfilepath" value="${basedir}/passwords.txt"/>
+    <property name="masterpasswordfilepath" value="${basedir}/masterpassword.dat"/>
+    
+	<echo message="${classes.dir}${ant.project.name}.jar" />
+	
+    <taskdef name="GetPassword" 
+    		 classname="info.thomas_michel.projects.cryptman.ant.PasswordTask" 
+    		 classpath="${classes.dir}/${ant.project.name}.jar"/>  
+    
+    <target name="getPassword1" description="example1 for a usage task">
+        <echo message="Hier wird das Password1 aus der Passwortdatei gelesen"/>
+	    <GetPassword Prompt="${prompt}" 
+	    			EncryptAlgorithm="PBEWithMD5AndDES"
+	    			PasswordStoreHelperClassName="info.thomas_michel.projects.cryptman.io.PasswordStoreHelperImpl"
+	    			PasswordPropertyName="password1"
+					HostName="${hostname}" 
+					UserName="${username}" 
+					PasswordFilePath="${passwordfilepath}" 
+					PasswordDialogClassName="info.thomas_michel.projects.cryptman.gui.PasswordDialogImpl"
+					MasterPasswordFilePath="${masterpasswordfilepath}" />
+	    <echo message="passwort1: ${password1}"/>					
+    </target>
+    
+    <target name="getPassword2" description="example2 for a usage task">
+        <echo message="Hier wird das Password2 aus der Passwortdatei gelesen"/>
+	     <GetPassword Prompt="${prompt}" 
+	    			PasswordPropertyName="password2"
+					HostName="${hostname}" 
+					UserName="${username}" 
+					PasswordFilePath="${passwordfilepath}" 
+					MasterPasswordFilePath="${masterpasswordfilepath}"/>
+	    <echo message="passwort2: ${password2}"/>
+    	<echo message="Diese Passwörter sollten gleich sein '${password1}' und '${password2}'" />
+    </target>
+    
+	
+	<target name="getPasswordFallback1" unless="password1" description="Passwort einlesen falls nicht geklappt">
+    	<echo message="Hier kann das Passwort1 über Ant eingelesen werden"/>
+    </target> 
+    
+    <target name="getPasswordFallback2" unless="password2" description="Passwort einlesen falls nicht geklappt">
+    	<echo message="Hier kann das Passwort2 über Ant eingelesen werden"/>
+    </target> 
+    
+   <target name="getPassword3" description="example3 for a usage task">
+        <echo message="Hier wird das Password3 aus der Passwortdatei gelesen"/>
+	    <GetPassword Prompt="${prompt}" 
+		 			EncryptAlgorithm="PBEWithSHA1AndDESede"
+	    			PasswordPropertyName="password3"
+					HostName="${hostname}1" 
+					UserName="${username}1" 
+					PasswordFilePath="${passwordfilepath}" 
+					PasswordDialogClassName="info.thomas_michel.projects.cryptman.gui.PasswordDialogImpl"
+					MasterPasswordFilePath="${masterpasswordfilepath}" />
+	    <echo message="passwort3: ${password3}"/>					
+    </target>
+    
+    <target name="getPassword4" description="example4 for a usage task">
+        <echo message="Hier wird das Password4 aus der Passwortdatei gelesen"/>
+	     <GetPassword Prompt="${prompt}" 
+	     			EncryptAlgorithm="PBEWithSHA1AndDESede"
+	    			PasswordPropertyName="password4"
+					HostName="${hostname}1" 
+					UserName="${username}1" 
+					PasswordFilePath="${passwordfilepath}" 
+					MasterPasswordFilePath="${masterpasswordfilepath}"/>
+	    <echo message="passwort4: ${password4}"/>
+    	<echo message="Diese Passwörter sollten gleich sein '${password3}' und '${password4}'" />
+    </target>
+	
+    <target name="test" depends="getPassword1,getPasswordFallback1,getPassword2,getPasswordFallback2,getPassword3,getPassword4" description="example for a deploy task">
+    	<echo message="Hier können die Logins durchgeführt werden"/>
+    </target>
+    
+</project>

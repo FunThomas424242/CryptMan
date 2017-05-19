@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<properties>
+		<author email="development@thomas-michel.info">
+			Thomas Schubert
+		</author>
+		<title>Downloadbereich</title>
+	</properties>
+	<!-- Optional HEAD element, which is copied as is into the XHTML <head> element -->
+	<head>
+		<link rel="stylesheet" href="de/style/project.css"
+			type="text/css" />
+	</head>
+	<body>
+
+		<h2>Downloadbereich</h2>
+		<p>
+        Die aktuelle Version können Sie links über das Navigationsmenü (linker Rand) herunterladen.
+        
+        Die einzelnen Archive besitzen folgenden Inhalt:
+        <ul>
+        <li>Binary jar-with-dep: Das Archiv enthält das Binärprogramm mit allen benötigten Bibliotheken. </li>
+        <li>Binary tar.bz2: Das Archiv enthält das Binärprogramm und ist mit tar und bz2 Algorithmen komprimiert worden. </li>
+        <li>Binary tar.gz: Das Archiv enthält das Binärprogramm und ist mit tar und gzip Algorithmen kompimiert worden. </li>
+        <li>Binary zip: Das Arciv enthält das Binärprogram und ist mit Zip Algorithmen komprimiert worden. </li>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+        </ul>
+		</p>
+	</body>
+</document>
+

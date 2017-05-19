@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="PasswordFilePath">${pom.build.outputDirectory}/../test/passwort.txt</entry>
+<entry key="MasterPasswordFilePath">${pom.build.outputDirectory}/../test/master.txt</entry>
+</properties>

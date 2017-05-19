@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="${project.name}">
+	<publishDate format="dd.MM.yyyy" />
+	<bannerLeft>
+		<name>${project.name}</name>
+	</bannerLeft>
+	<body>
+		<links>
+			<item name="Apache" href="http://www.apache.org/" />
+			<item name="Maven 1.0" href="http://maven.apache.org/" />
+			<item name="Maven 2" href="http://maven.apache.org/maven2/" />
+		</links>
+
+		<menu name="Übergeordnetes Projekt">
+			<item name="Maven Project POM"
+				href="../projectpom/index.html" />
+		</menu>
+		<menu ref="modules" />
+		<menu name="Version ${project.version}">
+			<item name="Downloadbereich" href="de/download.html"
+				collapse="true">
+				<item name="Binary jar-with-dep"
+					href="archives/${project.build.finalName}-jar-with-dependencies.jar" />
+				<!--item name="Site zip"
+					href="archives/${project.build.finalName}-site.zip" /-->
+				<item name="Binary tar.bz2"
+					href="archives/${project.build.finalName}-bin.tar.bz2" />
+				<item name="Binary tar.gz"
+					href="archives/${project.build.finalName}-bin.tar.gz" />
+				<item name="Binary zip"
+					href="archives/${project.build.finalName}-bin.zip" />
+				<item name="Projekt tar.bz2"
+					href="archives/${project.build.finalName}-project.tar.bz2" />
+				<item name="Projekt tar.gz"
+					href="archives/${project.build.finalName}-project.tar.gz" />
+				<item name="Projekt zip"
+					href="archives/${project.build.finalName}-project.zip" />
+				<item name="Source tar.bz2"
+					href="archives/${project.build.finalName}-src.tar.bz2" />
+				<item name="Source tar.gz"
+					href="archives/${project.build.finalName}-src.tar.gz" />
+				<item name="Source zip"
+					href="archives/${project.build.finalName}-src.zip" />
+			</item>
+		</menu>
+
+		${reports}
+
+	</body>
+</project>

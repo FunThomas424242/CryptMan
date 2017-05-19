@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+  <properties>
+    <author email="development@thomas-michel.info">Thomas Schubert</author>
+    <title>CryptMan</title>
+  </properties>
+  <!-- Optional HEAD element, which is copied as is into the XHTML <head> element -->
+  <head>
+    	<link rel="stylesheet" href="de/style/project.css" type="text/css"/>
+  </head>
+  <body>
+  
+  	<h2>Projekt CryptMan</h2>
+  	<p>
+  	CryptMan ist eine Helferklasse zur Ver- und Entschlüsselung von Texten mit
+  	Hilfe des JCA (Java Cryptographie API).
+  	</p>
+  	<p>
+  	Weiterhin gehört zu CryptMan die Realisierung eines optionalen Ant Task.
+  	Dieser Task liest aus einer Masterdatei ein Passwort (Masterpasswort).
+  	Anschliessend wird in einer Datei, in welcher Zugangsdaten für diverse
+  	Rechner hinterlegt sind, der benötigte Datensatz des Zugangs ausgelesen.
+  	Das in diesem Datensatz verschlüsselt hinterlegte Passwort, wird dann mit 
+  	Hilfe des Masterpasswortes entschlüsselt und über ein Property an den Ant 
+  	Task zurückgegeben. <br/>
+  	Wird kein Zugangsdatensatz in der Datei gefunden, wird das Passwort zunächst
+  	im Dialog vom Nutzer abgefragt und der Zugangsdatensatz in der Datei
+  	gespeichert.<br/>
+  	Die Implementierung des Ant Task kann durch Einbinden eigener Klassen um
+  	einem Nutzereigenen Passworteingabedialog sowie Nutzerdefinierte Helper zum Lesen
+  	und Schreiben der Passwortinformationen in einen Speicher (Datei, Datenbank,...)
+  	erweitert werden. Der Verschlüsselungsalgorithmus lässt sich ebenfalls als Parameter
+  	an den Ant Task übergeben.
+  	</p>
+  </body>
+</document>
+
